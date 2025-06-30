@@ -8,7 +8,7 @@ A clean, responsive portfolio website created as a student to showcase my skills
 
 ## 📸 Preview
 
-![Portfolio Preview](screenshotsportfolio-preview.png)
+![Portfolio Preview](portfolio-preview.png)
 
 ---
 
