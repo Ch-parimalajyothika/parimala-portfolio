@@ -1075,3 +1075,52 @@ main {
 [data-theme="light"] .project-description {
   color: #576574;
 }
+/* Projects Button Styling */
+.contact-btn {
+  display: inline-block;
+  background-color: #00bfff;
+  color: #111116;
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 191, 255, 0.4);
+}
+
+/* Updated Name/Role Circle */
+.name-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #00bfff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="dark"] .name-circle {
+  background: radial-gradient(circle, #0c2328 0%, #111116 80%);
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+}
+
+[data-theme="light"] .name-circle {
+  background: radial-gradient(circle, #e0f7fa 0%, #ffffff 80%);
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.15);
+}
+
+.name-circle p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+[data-theme="dark"] .name-circle p { color: #ffffff; }
+[data-theme="light"] .name-circle p { color: #111116; }
