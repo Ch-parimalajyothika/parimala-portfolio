@@ -738,5 +738,47 @@ main {
   color: var(--highlight); /* Ensures consistent blue color */
 }
 
+/* Responsive Grid for Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+/* Professional Card Styling & Hover Effects */
+.project-card {
+  background-color: #1e1e24; /* Fallback dark card background */
+  border: 1px solid #2a2a35;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Lift on Hover */
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: #00adb5; /* Optional secondary/accent color highlighting */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-description {
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
 
 
