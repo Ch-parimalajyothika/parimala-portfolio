@@ -782,3 +782,296 @@ main {
 }
 
 
+/* ==========================================================================
+   About Page Layout
+   ========================================================================== */
+
+.about-section {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  max-width: 1150px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Left Side: Bio Text Content
+   ========================================================================== */
+
+.about-bio h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  /* Uses your theme's default heading color variable */
+  color: var(--text-color, #ffffff); 
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .about-bio h1 {
+  color: #ffffff;
+}
+
+[data-theme="light"] .about-bio h1 {
+  color: #111116;
+}
+
+.about-bio p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Dynamic text colors matching the mode background */
+[data-theme="dark"] .about-bio p {
+  color: #e2e8f0;
+}
+
+[data-theme="light"] .about-bio p {
+  color: #334155;
+}
+
+/* Text highlights stay crisp */
+.about-bio strong, 
+.about-bio em {
+  color: #00bfff;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   Right Side: Timeline & Cards
+   ========================================================================== */
+
+.about-timeline h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .about-timeline h2 {
+  color: #ffffff;
+}
+
+[data-theme="light"] .about-timeline h2 {
+  color: #111116;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Vertical timeline link line */
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  bottom: -30px;
+  width: 2px;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .timeline-item:not(:last-child)::after {
+  background: #2a2a35;
+}
+
+[data-theme="light"] .timeline-item:not(:last-child)::after {
+  background: #cbd5e1;
+}
+
+/* Timeline Left Badges */
+.timeline-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #00bfff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="dark"] .timeline-badge {
+  background: #1e1e24;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+}
+
+[data-theme="light"] .timeline-badge {
+  background: #f8fafc;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.1);
+}
+
+/* Timeline Content Cards */
+.timeline-content {
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  width: 100%;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .timeline-content {
+  background: #111116;
+  border: 1px solid #2a2a35;
+}
+
+[data-theme="light"] .timeline-content {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content:hover {
+  border-color: #00bfff;
+}
+
+.timeline-content h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .timeline-content h4 {
+  color: #ffffff;
+}
+
+[data-theme="light"] .timeline-content h4 {
+  color: #111116;
+}
+
+.timeline-meta {
+  font-size: 0.85rem;
+  color: #00bfff;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .timeline-content p {
+  color: #94a3b8;
+}
+
+[data-theme="light"] .timeline-content p {
+  color: #64748b;
+}
+
+/* Responsive adjustment for portable screens */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+/* ==========================================================================
+   Projects Section Layout
+   ========================================================================= */
+
+.projects-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .projects-title {
+  color: #ffffff;
+}
+
+[data-theme="light"] .projects-title {
+  color: #111116;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+/* ==========================================================================
+   Project Card Dynamic Styling
+   ========================================================================= */
+
+.project-card {
+  border-radius: 12px;
+  padding: 1.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+/* Dark Mode Card Colors */
+[data-theme="dark"] .project-card {
+  background-color: #111116;
+  border: 1px solid #2a2a35;
+}
+
+/* Light Mode Card Colors */
+[data-theme="light"] .project-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Hover Interactive Elevation */
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: #00bfff;
+}
+
+[data-theme="dark"] .project-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 191, 255, 0.2);
+}
+
+[data-theme="light"] .project-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 191, 255, 0.15);
+}
+
+/* Card Heading Text Styling */
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .project-card h3 {
+  color: #ffffff;
+}
+
+[data-theme="light"] .project-card h3 {
+  color: #111116;
+}
+
+/* Card Main Description Text */
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .project-description {
+  color: #94a3b8;
+}
+
+[data-theme="light"] .project-description {
+  color: #576574;
+}
